@@ -1,6 +1,26 @@
 {
   "globals": {
-    "__TS_CONFIG__": "tsconfig.json"
+    "__TS_CONFIG__": {
+      "baseUrl": "",
+      "declaration": false,
+      "jsx": "React",
+      "lib": ["es6", "dom"],
+      "mapRoot": "./src",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noEmitHelpers": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "outDir": "./dist",
+      "sourceMap": true,
+      "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "target": "es2015",
+      "typeRoots": [
+        "./node_modules/@types"
+      ]
+    }
   },
   "moduleFileExtensions": [
     "js",
@@ -10,7 +30,8 @@
     "tsx"
   ],
   "transform": {
-    "^.+\\.(ts|tsx|js|jsx)$": "<rootDir>/config/jest/preprocessor.js"
+    "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
+    "^.+\\.jsx$": "<rootDir>/node_modules/babel-jest"
   },
   "moduleNameMapper": {
     "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>\\config\\jest\\FileStub.js",
@@ -26,5 +47,6 @@
   "testPathDirs": [
     "<rootDir>/src"
   ],
-  "testRegex": "\\.(test|spec)\\.(ts|tsx|js|jsx)$"
+  "testRegex": "\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+  "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
 }

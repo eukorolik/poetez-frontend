@@ -10,7 +10,7 @@ require('dotenv').config({silent: true});
 const jest = require('jest');
 const argv = process.argv.slice(2);
 
-argv.push('-c=./.jestrc');
+argv.push('-c=./.jestrc', '--coverage');
 
 // Watch unless on CI
 if (!process.env.CI) {
