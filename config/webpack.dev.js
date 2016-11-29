@@ -30,9 +30,7 @@ WebpackConfig.module.rules.push(
       forkChecker: true,
       useBabel: true,
       useCache: true,
-      cacheDirectory: findCacheDir({
-        name: 'react-scripts'
-      })
+      cacheDirectory: paths.appCache
     }
   },
   {

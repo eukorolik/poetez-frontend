@@ -34,6 +34,7 @@ module.exports = {
   appStylelintRc: resolveApp('.stylelintrc'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
+  appCache: resolveApp('.cache'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
